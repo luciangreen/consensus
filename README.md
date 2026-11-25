@@ -1,6 +1,6 @@
 # consensus
 
-run the same program on every backend you have (Prolog, Detlog, C, an ANN, a quantum circuit) and compare. Any disagreement is shrunk to a smallest input that still shows it (delta debugging), ready to become a bug report and a test. A backend is a Name-Goal pair; call(Goal, Input, Output).
+run the same program on every backend you have (Prolog, Detlog, C, an ANN, a quantum circuit) and compare. Any disagreement is shrunk, one item at a time, to an input that still shows it and from which no single item can be removed (1-minimal, as in delta debugging; not always the smallest such input), ready to become a bug report and a test. A backend is a Name-Goal pair; call(Goal, Input, Output).
 
 ## Use
 
