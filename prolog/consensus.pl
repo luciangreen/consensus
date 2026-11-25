@@ -1,6 +1,6 @@
 % consensus: run the same program on every backend you have (Prolog, Detlog, C, an ANN, a
-% quantum circuit) and compare. Any disagreement is shrunk to a smallest input that still
-% shows it (delta debugging), ready to become a bug report and a test.
+% quantum circuit) and compare. Any disagreement is shrunk, one item at a time, to an input
+% that still shows it and from which no single item can be removed (1-minimal; not always the smallest), ready to become a bug report and a test.
 % A backend is a Name-Goal pair; call(Goal, Input, Output).
 %?- verdict([prolog-sum_list, detlog-sum_acc], [1,2,3], V).           % V = agree(6)
 %?- verdict([prolog-sum_list, buggy-sum_bug], [1,3,5,2], V).          % V = disagree([prolog-11, buggy-12])
